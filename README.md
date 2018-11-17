@@ -22,13 +22,13 @@ The puppet-galera module installs, configures, and manages a mysql galera instal
 
 ##Module Description
 
-<!--The MySQL module manages both the installation and configuration of MySQL as
+<!-- The MySQL module manages both the installation and configuration of MySQL as
 well as extends Pupppet to allow management of MySQL resources, such as
 databases, users, and grants.-->
 
 ## Backwards Compatibility
 
-<!--This module has just undergone a very large rewrite, the original was written by .  As a result it will no
+<!-- This module has just undergone a very large rewrite, the original was written by .  As a result it will no
 longer work with the previous classes and configuration as before.  We've
 attempted to handle backwards compatibility automatically by adding a
 `attempt_compatibility_mode` parameter to the main mysql class.  If you set
@@ -44,13 +44,13 @@ live.  Even if it's just a no-op and a manual comparision.  Please be careful!
 
 ### What MySQL affects
 
-<!--* MySQL package.
+<!-- * MySQL package.
 * MySQL configuration files.
 * MySQL service.
 -->
 ### Beginning with MySQL
 
-<!--If you just want a server installing with the default options you can run
+<!-- If you just want a server installing with the default options you can run
 `include '::mysql::server'`.  If you need to customize options, such as the root
 password or /etc/my.cnf settings then you can also include `mysql::server` and
 pass in an override hash as seen below:
@@ -64,13 +64,13 @@ class { '::mysql::server':
 -->
 ## Usage
 
-<!--All interaction for the server is done via `mysql::server`.  To install the
+<!-- All interaction for the server is done via `mysql::server`.  To install the
 client you use `mysql::client`, and to install bindings you can use
 `mysql::bindings`.
 -->
 ### Overrides
 
-<!--The hash structure for overrides in `mysql::server` is as follows:
+<!-- The hash structure for overrides in `mysql::server` is as follows:
 
 ```puppet
 $override_options = {
@@ -102,7 +102,7 @@ hardcoded into the my.cnf template file.
 ### Classes
 
 #### Public classes
-<!--* `mysql::server`: Installs and configures MySQL.
+<!-- * `mysql::server`: Installs and configures MySQL.
 * `mysql::server::account_security`: Deletes default MySQL accounts.
 * `mysql::server::monitor`: Sets up a monitoring user.
 * `mysql::server::mysqltuner`: Installs MySQL tuner script.
@@ -111,7 +111,7 @@ hardcoded into the my.cnf template file.
 * `mysql::client`: Installs MySQL client (for non-servers).
 -->
 #### Private classes
-<!--* `mysql::server::install`: Installs packages.
+<!-- * `mysql::server::install`: Installs packages.
 * `mysql::server::config`: Configures MYSQL.
 * `mysql::server::service`: Manages service.
 * `mysql::server::root_password`: Sets MySQL root password.
@@ -124,7 +124,7 @@ hardcoded into the my.cnf template file.
 -->
 ### Parameters
 
-<!--####mysql::server
+<!-- #### mysql::server
 
 ##### `root_password`
 
@@ -140,7 +140,7 @@ MySQL user password for backups.-->
 
 ### Providers
 
-<!--#### mysql_database
+<!-- #### mysql_database
 
 mysql_database can be used to create and manage databases within MySQL:
 
