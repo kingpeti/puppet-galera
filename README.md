@@ -52,12 +52,11 @@ live.  Even if it's just a no-op and a manual comparision.  Please be careful!
 ```
 ### Beginning with MySQL
 
-```
 If you just want a server installing with the default options you can run
 `include '::mysql::server'`.  If you need to customize options, such as the root
 password or /etc/my.cnf settings then you can also include `mysql::server` and
 pass in an override hash as seen below:
-```
+
 ```
 puppet
 class { '::mysql::server':
@@ -68,16 +67,13 @@ class { '::mysql::server':
 
 ## Usage
 
-```
 All interaction for the server is done via `mysql::server`.  To install the
 client you use `mysql::client`, and to install bindings you can use
 `mysql::bindings`.
-```
+
 ### Overrides
 
-```
 The hash structure for overrides in `mysql::server` is as follows:
-```
 
 ```
 puppet
@@ -87,33 +83,33 @@ $override_options = {
   }
 }
 ```
-```
+
 For items that you would traditionally represent as:
-```
+
 ```
 <pre>
 [section]
 thing
 </pre>
 ```
-```
+
 You can just make an entry like `thing => true` in the hash.  MySQL doesn't
 care if thing is alone or set to a value, it'll happily accept both.
-```
+
 ### Custom configuration
 
-```
+
 To add custom mysql configuration you can drop additional files into
 `/etc/mysql/conf.d/` in order to override settings or add additional ones (if you
 choose not to use override_options in `mysql::server`).  This location is
 hardcoded into the my.cnf template file.
-```
+
 ## Reference
 
 ### Classes
 
 #### Public classes
-```
+
 * `mysql::server`: Installs and configures MySQL.
 * `mysql::server::account_security`: Deletes default MySQL accounts.
 * `mysql::server::monitor`: Sets up a monitoring user.
@@ -121,9 +117,9 @@ hardcoded into the my.cnf template file.
 * `mysql::server::backup`: Sets up MySQL backups via cron.
 * `mysql::bindings`: Installs various MySQL language bindings.
 * `mysql::client`: Installs MySQL client (for non-servers).
-```
+
 #### Private classes
-```
+
 * `mysql::server::install`: Installs packages.
 * `mysql::server::config`: Configures MYSQL.
 * `mysql::server::service`: Manages service.
@@ -134,10 +130,10 @@ hardcoded into the my.cnf template file.
 * `mysql::bindings::python`: Installs Python bindings.
 * `mysql::bindings::ruby`: Installs Ruby bindings.
 * `mysql::client::install`:  Installs MySQL client.
-```
+
 ### Parameters
 
-```
+
 #### mysql::server
 
 ##### `root_password`
@@ -151,15 +147,14 @@ MySQL user to create for backing up.
 ##### `backuppassword`
 
 MySQL user password for backups.
-```
 
 ### Providers
 
-```
+
 #### mysql_database
 
 mysql_database can be used to create and manage databases within MySQL:
-```
+
 ```
 puppet
 mysql_database { 'information_schema':
