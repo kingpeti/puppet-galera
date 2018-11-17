@@ -20,24 +20,22 @@
 
 The puppet-galera module installs, configures, and manages a mysql galera installation. It is tested with percona xtradb cluster, but should also work with mariadb-galera.
 
-##Module Description
+## Module Description
 
-```
 The MySQL module manages both the installation and configuration of MySQL as
 well as extends Pupppet to allow management of MySQL resources, such as
 databases, users, and grants.
-```
+
 
 ## Backwards Compatibility
 
-```
 This module has just undergone a very large rewrite, the original was written by .  As a result it will no
 longer work with the previous classes and configuration as before.  We've
 attempted to handle backwards compatibility automatically by adding a
 `attempt_compatibility_mode` parameter to the main mysql class.  If you set
 this to true it will attempt to map your previous parameters into the new
 `mysql::server` class.
-```
+
 ### WARNING
 
 This may fail.  It may eat your MySQL server.  PLEASE test it before running it
@@ -67,7 +65,7 @@ class { '::mysql::server':
   override_options => { 'mysqld' => { 'max_connections' => '1024' } }
 }
 ```
-\
+
 ## Usage
 
 ```
